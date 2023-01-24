@@ -1,23 +1,36 @@
-﻿// Задача 25: Напишите цикл, который принимает 
-// на вход два числа (A и B) и возводит число 
-// A в натуральную степень B.
-// 3, 5 -> 243 (3⁵)
-// 2, 4 -> 16
+﻿// Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
 
-int Square(int a, int b)
+// 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
+
+// 6, 1, 33 -> [6, 1, 33]
+
+// Console.Write("Введите колличество чисел :");
+// int y = Convert.ToInt32(Console.ReadLine());
+
+
+string Arr(int count)
 {
-    int c = 0;
-    int k = 0;
-    for (int i = 0; k <= b; i++)
+
+    string x = "";
+    if (count <= 8)
     {
-        c = a*b;
-        k++;
-        Console.WriteLine(c);
+        int[] array = new int[count];
+        for (int i = 0; i < array.Length; i++)
+        {
+            array[i] = new Random().Next(count);
+
+        }
+        x = string.Join(", ", array);
+
+
     }
 
-
-    return c;
+    else
+    {
+        Console.Write("Максимальное колличество элементов 8.");
+    }
+    return x;
 }
-
-
-Square(3,5);
+Console.Write("Введите колличество чисел :");
+int result = Convert.ToInt32(Console.ReadLine());
+Console.Write(Arr(result));
